@@ -12,4 +12,4 @@ S. Uhlig, “Software-defined networking: A comprehensive survey,” Proc. IEEE,
 http://mininet.org/
 
 
-*** Note that the python version using is 3.x, need to change the version of python ***
+***Note that the python version using is 3.x, need to change the version of python***
