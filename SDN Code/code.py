@@ -11,23 +11,23 @@ import pandas as pd
 from openpyxl import load_workbook
 
 log = core.getLogger()
-policyFile = "%s/pox/ext/firewallPolicy.csv" % os.environ[ 'HOME' ]
-ruleFile = "%s/pox/ext/firewallRule.xlsx" % os.environ[ 'HOME' ]
-host1Policy = "%s/pox/ext/host1lvl2Policy.csv" % os.environ[ 'HOME' ]
-host3Policy = "%s/pox/ext/host3lvl2Policy.csv" % os.environ[ 'HOME' ]
-host5Policy = "%s/pox/ext/host5lvl2Policy.csv" % os.environ[ 'HOME' ]
-host7Policy = "%s/pox/ext/host7lvl2Policy.csv" % os.environ[ 'HOME' ]
+policyFile = "%s/pox/ext/firewallPolicy.csv" % os.environ[ 'HOME' ] # One excel file for all rules
+ruleFile = "%s/pox/ext/firewallRule.xlsx" % os.environ[ 'HOME' ] #ignore
+host1Policy = "%s/pox/ext/host1lvl2Policy.csv" % os.environ[ 'HOME' ] #ignore
+host3Policy = "%s/pox/ext/host3lvl2Policy.csv" % os.environ[ 'HOME' ] #ignore
+host5Policy = "%s/pox/ext/host5lvl2Policy.csv" % os.environ[ 'HOME' ] #ignore
+host7Policy = "%s/pox/ext/host7lvl2Policy.csv" % os.environ[ 'HOME' ] #ignore
 
 class LearningSwitch(object):
      def __init__(self, connection):
          self.connection = connection
          connection.addListeners(self)
-         self.list1 = []
-         self.host1 = []
-         self.host3 = []
-         self.host5 = []
-         self.host7 = []
-         self.priveleges = {}  
+         self.list1 = [] #ignore
+         self.host1 = [] #ignore
+         self.host3 = [] #ignore
+         self.host5 = [] #ignore
+         self.host7 = [] #ignore
+         self.priveleges = {}  #ignore
          
      def readRule(self):
          print("Before read Excel File")
@@ -66,7 +66,7 @@ class LearningSwitch(object):
              self.wb.save(ruleFile)
              
      
-     def readlvl2(self, filepath):
+     def readlvl2(self, filepath): #ignore
          ifile = open(filepath,"r")
          if(ifile):
              print ("Open the lvl2 file successfully")
@@ -91,7 +91,7 @@ class LearningSwitch(object):
          ifile.close()
          return l
 
-     def writeFile(self):
+     def writeFile(self): #ignore
          
          ifile = open(policyFile,"r")
          if(ifile):
@@ -130,7 +130,7 @@ class LearningSwitch(object):
          msg.priority = 11
          self.connection.send(msg)
     
-     def allowRule(self, src, dst):
+     def allowRule(self, src, dst): #ignore
          print ("Writing rule.....")
          msg = of.ofp_flow_mod()
          match = of.ofp_match(dl_type = 0x800, nw_proto= pkt.ipv4.ICMP_PROTOCOL)
@@ -187,7 +187,7 @@ class LearningSwitch(object):
              return False
          pass   
   
-     def switchBehave(self, packet, packet_in, port_switch, switch_id):
+     def switchBehave(self, packet, packet_in, port_switch, switch_id): #consist of main functionality
          flowMsg = of.ofp_flow_mod()
          flowMsg.idle_timeout = 10
          flowMsg.hard_timeout = 10
