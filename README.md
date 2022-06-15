@@ -7,10 +7,9 @@ D. Kreutz, F. M. V. Ramos, P. E. Verissimo, C. E. Rothenberg, S. Azodolmolky, an
 S. Uhlig, “Software-defined networking: A comprehensive survey,” Proc. IEEE, vol. 
 103, no. 1, pp. 14–76, 2015, doi: 10.1109/JPROC.2014.2371999 
 ```
-## Standard of Zero Trust is following NIST 800-207
-```
+## Definition of Zero Trust is following NIST 800-207
 https://csrc.nist.gov/publications/detail/sp/800-207/final
-```
+
 
 ## Mininet (used to create SDN with pox controller built in )
 http://mininet.org/
